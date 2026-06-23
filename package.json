@@ -22,7 +22,6 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "prepare": "npm run build",
     "watch": "nodemon",
     "lint": "eslint src --ext .ts",
     "test": "vitest run",
