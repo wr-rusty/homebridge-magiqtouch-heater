@@ -1,0 +1,15 @@
+# keep the published package small: ship only dist + config schema + docs
+.claude/
+src/
+test/
+node_modules/
+.github/
+.eslintrc.json
+tsconfig.json
+nodemon.json
+vitest.config.ts
+coverage/
+*.tgz
+*.log
+.DS_Store
+.env

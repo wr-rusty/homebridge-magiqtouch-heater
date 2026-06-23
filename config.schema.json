@@ -1,0 +1,58 @@
+{
+  "pluginAlias": "MagIQTouch",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Controls a Seeley MagIQTouch ducted gas heater via the Seeley cloud. Use the same email and password as the MagIQtouch mobile app.",
+  "footerDisplay": "For process isolation, run this as a child bridge (add a `_bridge` block to the platform config — see the plugin README). Your credentials are stored in Homebridge's config.json in plain text.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "MagIQTouch",
+        "required": true
+      },
+      "email": {
+        "title": "Email",
+        "type": "string",
+        "format": "email",
+        "required": true,
+        "description": "Your Seeley MagIQtouch account email."
+      },
+      "password": {
+        "title": "Password",
+        "type": "string",
+        "required": true,
+        "x-schema-form": { "type": "password" },
+        "description": "Your Seeley MagIQtouch account password."
+      },
+      "pollInterval": {
+        "title": "Poll interval (seconds)",
+        "type": "integer",
+        "default": 60,
+        "minimum": 15,
+        "maximum": 600,
+        "description": "How often to re-request status as a safety net (the plugin also receives live updates)."
+      },
+      "exposeFan": {
+        "title": "Expose fan speed",
+        "type": "boolean",
+        "default": false,
+        "description": "Show the heater fan speed as a slider on the heater tile."
+      },
+      "exposeFanOnlyMode": {
+        "title": "Expose fan-only mode",
+        "type": "boolean",
+        "default": false,
+        "description": "Add a separate Fan accessory for running the heater fan without heating."
+      },
+      "debug": {
+        "title": "Verbose logging",
+        "type": "boolean",
+        "default": false,
+        "description": "Log full status payloads and protocol traffic."
+      }
+    }
+  }
+}
